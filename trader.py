@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-trader_data = pd.read_csv("/Users/asadashougo/py3/data_prac/data_dir/sys_data.csv")
+trader_data = pd.read_csv(".csvファイルまでのpath")
 # 正規化
 trader_data_normalization = trader_data.apply(lambda x : (x-np.mean(x))/(np.max(x) - np.min(x)))
 # DataFrameで返ってくる
@@ -29,5 +29,5 @@ print(pd.DataFrame({"名前": except_selector_data.columns,
 print("切片 : ", clf.intercept_)
 print("決定係数 : ", clf.score(X, Y))
 学習データを保存する
-joblib.dump(clf, "/Users/asadashougo/py3/data_prac/learn_data/trader.pkl")
+joblib.dump(clf, "保存したいディレクトリまでのpath")
 print("ok!")
